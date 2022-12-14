@@ -46,7 +46,7 @@ function CreateForm({ setLoggedIn }) {
       // if there's a logged in user call create account route
       if (auth.currentUser) {
         //Every new user starts with 0 balance
-        const url = `http://localhost:3001/account/create/${name}/${email}/${password}/0`;
+        const url = `/account/create/${name}/${email}/${password}/0`;
         (async () => {
           var res = await fetch(url);
           var data = await res.json();
