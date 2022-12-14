@@ -41,20 +41,15 @@ export default function Root() {
           <div className='collapse navbar-collapse' id='navbarNav'>
             <ul className='navbar-nav'>
               <li className='nav-item'>
-                <a className='nav-link active' aria-current='page' href='/'>
-                  Home
-                </a>
-              </li>
-              <li className='nav-item'>
                 <Link className='nav-link' to={'createAccount'}>
                   Create Account
                 </Link>
               </li>
-              <li className='nav-item'>
+              {/* <li className='nav-item'>
                 <Link className='nav-link' to={'login'}>
                   Login
                 </Link>
-              </li>
+              </li> */}
               <li className='nav-item'>
                 <Link className='nav-link' to={'deposit'}>
                   Deposit
@@ -82,12 +77,21 @@ export default function Root() {
                     Log Out
                   </Link>
                 </li>
-              ) : null}
+              ) : (
+                <li className='nav-item'>
+                  <Link className='nav-link' to={'login'}>
+                    Login
+                  </Link>
+                </li>
+              )}
             </ul>
-            <div className='position-absolute top-0 end-0'>{loggedInUser}</div>
+            <ul class='nav navbar-nav navbar-right'>
+              <li>{loggedInUser}</li>
+            </ul>
           </div>
         </div>
       </nav>
+
       <div id='outlet'>
         <Outlet />
       </div>

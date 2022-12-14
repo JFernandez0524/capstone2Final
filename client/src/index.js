@@ -13,6 +13,7 @@ import Logout from './routes/Logout';
 import ErrorPage from './error-page';
 import Root from './routes/Root';
 import { AllData } from './routes/AllData';
+import IndexRoute from './routes/IndexRoute';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
+      { index: true, element: <IndexRoute /> },
       {
         path: 'createAccount',
         element: <CreateAccount />,
